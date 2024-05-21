@@ -24,6 +24,14 @@ func main() {
 	rootNode := binaryTree.Node{Data: "root", Left: nil, Right: nil}
 	bTree := binaryTree.BinaryTree{}
 	bTree.SetRoot(&rootNode)
+
+	bTree.Insert("node left1")
+	bTree.Insert("node right1")
+	bTree.Insert("node left2")
+	bTree.Insert("node right2")
+	bTree.Insert("node left3")
+	bTree.Insert("node right3")
+
 	bTree.Print()
 
 }

@@ -26,7 +26,3 @@ func (q *Queue) Dequeue() interface{} {
 func (q *Queue) PrintQueue() {
 	fmt.Println(*q)
 }
-
-func Test() {
-	fmt.Println("Test1")
-}

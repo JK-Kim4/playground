@@ -1,7 +1,8 @@
 package main
 
 import (
-	queue "bfs/packages"
+	binaryTree "bfs/packages/binaryTree"
+	queue "bfs/packages/queue"
 )
 
 func main() {
@@ -18,5 +19,11 @@ func main() {
 
 	queue1.Dequeue()
 	queue1.PrintQueue()
+
+	//BinaryTree Test
+	rootNode := binaryTree.Node{Data: "root", Left: nil, Right: nil}
+	bTree := binaryTree.BinaryTree{}
+	bTree.SetRoot(&rootNode)
+	bTree.Print()
 
 }

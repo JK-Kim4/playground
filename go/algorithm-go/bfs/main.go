@@ -1,7 +1,22 @@
 package main
 
-import pac "bfs/packages"
+import (
+	queue "bfs/packages"
+)
 
-func main(){
-	pac.Test();
+func main() {
+
+	//Queue Test
+	queue1 := queue.Queue{}
+	queue2 := queue.Queue{}
+	queue2.Dequeue()
+	queue1.PrintQueue()
+	queue1.Enqueue("element1")
+	queue1.Enqueue("element2")
+	queue1.Enqueue("element3")
+	queue1.PrintQueue()
+
+	queue1.Dequeue()
+	queue1.PrintQueue()
+
 }

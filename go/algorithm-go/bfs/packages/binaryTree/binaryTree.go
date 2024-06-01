@@ -30,24 +30,14 @@ func (bTree *BinaryTree) Insert(data interface{}) {
 
 func (node *Node) Insert(data interface{}) {
 	if node == nil {
-		fmt.Println("root node is empty")
+		node = &Node{Data: data, Left: nil, Right: nil}
 		return
 	}
 
 	if node.Left == nil {
-		node.Left = &Node{Data: data, Left: nil, Right: nil}
-		return
-	}
-
-	if node.Right == nil {
-		node.Right = &Node{Data: data, Left: nil, Right: nil}
-		return
-	}
-
-	if node.Left.Left != nil && node.Left.Right != nil {
-		node.Right.Insert(data)
-	} else {
-		node.Left.Insert(data)
+		node.Left.Insert(data);
+	} else if node.Right == nil {
+		node.Right.Insert(data);
 	}
 
 }

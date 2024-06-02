@@ -11,49 +11,53 @@ type BinaryTree struct {
 
 // 노드 구조체
 type Node struct {
-	Data  interface{} //값
-	Left  *Node       //좌측 노드 주소
-	Right *Node       //우측 노드 주소
+	Value string //값
+	Key   int16  //키
+	Left  *Node  //좌측 노드 주소
+	Right *Node  //우측 노드 주소
 }
 
 // BinaryTree data 삽입
-func (bTree *BinaryTree) Insert(data interface{}) {
-
+func (bTree *BinaryTree) Insert(value string, key int16) {
 	if bTree.root == nil {
-		bTree.root = &Node{Data: data, Left: nil, Right: nil}
-		return
-	}
-
-	bTree.root.Insert(data)
-
-}
-
-func (node *Node) Insert(data interface{}) {
-	if node == nil {
-		node = &Node{Data: data, Left: nil, Right: nil}
-		return
-	}
-
-	if node.Left == nil {
-		node.Left.Insert(data);
-	} else if node.Right == nil {
-		node.Right.Insert(data);
+		bTree.root = &Node{Value: value, Key: key, Left: nil, Right: nil}
+	} else {
+		bTree.root.Insert(value, key)
 	}
 
 }
 
-// BinaryTree root node 초기화
-func (bTree *BinaryTree) SetRoot(node *Node) {
-	bTree.root = node
+func (currentNode *Node) Insert(value string, key int16) {
+	if currentNode == nil {
+		currentNode = &Node{Value: value, Key: key, Left: nil, Right: nil}
+		return
+	}
+
+	if key == currentNode.Key {
+		fmt.Print("return")
+		return
+	}
+
+	if key < currentNode.Key {
+		//왼쪽 노드에 삽입
+		if currentNode.Left == nil {
+			fmt.Println("insert value left")
+			currentNode.Left = &Node{Value: value, Key: key, Left: nil, Right: nil}
+		} else {
+			currentNode.Left.Insert(value, key)
+		}
+	} else {
+		//오른쪽 노드에 삽입
+		if currentNode.Right == nil {
+			fmt.Println("insert value right")
+			currentNode.Right = &Node{Value: value, Key: key, Left: nil, Right: nil}
+		} else {
+			currentNode.Right.Insert(value, key)
+		}
+	}
+
 }
 
 func (bTree *BinaryTree) Print() {
-	fmt.Println(*bTree)
-	fmt.Println(*&bTree.root.Data)
-	fmt.Println(*&bTree.root.Left.Data)
-	fmt.Println(*&bTree.root.Right.Data)
-	fmt.Println(*&bTree.root.Left.Left.Data)
-	fmt.Println(*&bTree.root.Left.Right.Data)
-	fmt.Println(*&bTree.root.Right.Left.Data)
-	fmt.Println(*&bTree.root.Right.Right.Data)
+
 }

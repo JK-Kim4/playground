@@ -17,6 +17,7 @@ func main() {
 
 	visitedNode := bTree.Root.Bfs()
 
-	fmt.Print(visitedNode)
-
+	for _, vn := range visitedNode {
+		fmt.Println(vn.Value)
+	}
 }

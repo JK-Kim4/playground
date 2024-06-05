@@ -57,19 +57,19 @@ func (currentNode *Node) Insert(value string, key int16) {
 
 }
 
-func (rootNode *Node) Bfs() []string {
+func (rootNode *Node) Bfs() []*Node {
 	if rootNode == nil {
 		return nil
 	}
 
-	visited := []string{}
+	visitedNode := []*Node{}
 	que := queue.Queue{}
 
 	que.Enqueue(rootNode)
 
 	for !que.IsEmpty() {
 		currentNode := que.Dequeue().(*Node)
-		visited = append(visited, currentNode.Value)
+		visitedNode = append(visitedNode, currentNode)
 
 		if currentNode.Left != nil {
 			que = append(que, currentNode.Left)
@@ -81,5 +81,5 @@ func (rootNode *Node) Bfs() []string {
 
 	}
 
-	return visited
+	return visitedNode
 }

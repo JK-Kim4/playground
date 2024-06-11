@@ -58,7 +58,7 @@ func (currentNode *Node) DFS() []*Node {
 	if currentNode.Left != nil {
 		currentNode.Left.DFS()
 	}
-
+	//do someting  위치에 따라 전위 | 중위 | 후위
 	visitedNode = append(visitedNode, currentNode)
 	fmt.Println(currentNode.Value)
 

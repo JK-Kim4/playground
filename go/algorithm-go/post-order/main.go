@@ -1,8 +1,8 @@
 package main
 
 import (
-	binaryTree "dfs/packages/binaryTree"
 	"fmt"
+	binaryTree "post-order/packages/binaryTree"
 )
 
 func main() {

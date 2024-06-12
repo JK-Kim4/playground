@@ -1,8 +1,8 @@
 package binaryTree
 
 import (
-	queue "bfs/packages/queue"
 	"fmt"
+	queue "level-order/packages/queue"
 )
 
 // 이진 트리 구조체
@@ -19,29 +19,13 @@ type Node struct {
 }
 
 // BinaryTree data 삽입
-<<<<<<< HEAD
-func (bTree *BinaryTree) Insert(data interface{}) {
 
-	if bTree.root == nil {
-		bTree.root = &Node{Data: data, Left: nil, Right: nil}
-		return
-	}
-
-	bTree.root.Insert(data)
-
-}
-
-func (node *Node) Insert(data interface{}) {
-	
-=======
 func (bTree *BinaryTree) Insert(value string, key int16) {
 	if bTree.Root == nil {
 		bTree.Root = &Node{Value: value, Key: key, Left: nil, Right: nil}
 	} else {
 		bTree.Root.Insert(value, key)
 	}
->>>>>>> a2d93c7b8798ac1ecfaf096a5d6f99ef48f49eef
-
 }
 
 func (currentNode *Node) Insert(value string, key int16) {

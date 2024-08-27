@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class ArrayBinaryTree {
 
     public static void preOrder(char [][]inputArray, int idx){
         char []temp = inputArray[idx];
@@ -69,11 +69,11 @@ public class Main {
 
         }
 
-        Main.preOrder(matrix, 0);
+        ArrayBinaryTree.preOrder(matrix, 0);
         System.out.println();
-        Main.inOrder(matrix, 0);
+        ArrayBinaryTree.inOrder(matrix, 0);
         System.out.println();
-        Main.postOrder(matrix, 0);
+        ArrayBinaryTree.postOrder(matrix, 0);
 
     }
 }

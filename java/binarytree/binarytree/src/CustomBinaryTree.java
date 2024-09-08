@@ -1,24 +1,19 @@
-import org.w3c.dom.Node;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
 public class CustomBinaryTree {
 
-    static class Node {
+    private Node root = null;
 
-        char value;
-        Node left;
-        Node right;
+    public CustomBinaryTree(){}
+    public CustomBinaryTree(Node node){
+        this.root = node;
+    }
 
-
+    public boolean isEmpty(){
+        return (this.root == null);
     }
 
 
-    public static void main(String[] args) throws IOException {
 
-    }
 }
+
+
 

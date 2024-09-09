@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class CustomBinaryTree {
 
     Node root = null;
@@ -7,11 +10,11 @@ public class CustomBinaryTree {
         this.root = node;
     }
 
-    public boolean isEmpty(){
-        return (this.root == null);
+    public Node getRoot(){
+        return this.root;
     }
 
-    public void add (Node currentNode, int value){
+    public void add (int value){
         Node newNode = new Node(value);
 
         if(this.root == null){this.root = newNode;}
@@ -26,6 +29,34 @@ public class CustomBinaryTree {
 
     }
 
+    //root 노드를 시작으로 너비 우선 탐색
+    public void bfs(){
+
+        //방문 Node 저장 queue
+        Queue<Node> visited = new LinkedList<>();
+
+        //현재 Node
+        Node currentNode = null;
+
+        visited.add(this.root);
+
+        while (visited.size() > 0){
+            //do something
+            currentNode = visited.remove();
+
+            System.out.println(currentNode.getValue());
+
+            if (currentNode.left != null) visited.add(currentNode.left);
+            if (currentNode.right != null) visited.add(currentNode.right);
+        }
+
+
+        System.out.println("BFS IS END");
+    }
+
+    public boolean isEmpty(){
+        return (this.root == null);
+    }
 
     public Node insertNode(Node currentNode, Node newNode){
         if(currentNode == null){
@@ -41,10 +72,6 @@ public class CustomBinaryTree {
         }
 
         return currentNode;
-    }
-
-    public Node getRoot(){
-        return this.root;
     }
 
 

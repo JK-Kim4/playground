@@ -4,18 +4,20 @@ public class Main {
 
         CustomBinaryTree tree = new CustomBinaryTree();
 
-        tree.add(tree.root, 5);
-        tree.add(tree.root, 4);
-        tree.add(tree.root, 7);
-        tree.add(tree.root, 2);
-        tree.add(tree.root, 3);
+        tree.add(8);
+        tree.add(7);
+        tree.add(2);
+        tree.add(12);
+        tree.add(15);
 
 
-        System.out.println(tree.getRoot().getValue());              //5
-        System.out.println(tree.getRoot().getLeft().getValue());    //4
-        System.out.println(tree.getRoot().getRight().getValue());   //7
-        System.out.println(tree.getRoot().getLeft().getLeft().getValue());   //2
-        System.out.println(tree.getRoot().getLeft().getLeft().getRight().getValue());   //3
+        /*System.out.println(tree.getRoot().getValue());                          //8
+        System.out.println(tree.getRoot().getLeft().getValue());                //7
+        System.out.println(tree.getRoot().getRight().getValue());               //12
+        System.out.println(tree.getRoot().getLeft().getLeft().getValue());      //2
+        System.out.println(tree.getRoot().getRight().getRight().getValue());    //15*/
+
+        tree.bfs();
 
     }
 }

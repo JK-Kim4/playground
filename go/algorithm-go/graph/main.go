@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"graph/packages/queue"
 )
 
 func main() {
@@ -20,9 +21,11 @@ func main() {
 
 func bfs(graph map[string][]string, startV string) {
 
-	fmt.Println(graph)
-	fmt.Println(startV)
+	visited := queue.Queue{}
+	visited.Enqueue(startV)
+	visited.Enqueue("B")
 
-	fmt.Println(graph[startV])
-
+	for _, qu := range visited {
+		fmt.Println(qu)
+	}
 }

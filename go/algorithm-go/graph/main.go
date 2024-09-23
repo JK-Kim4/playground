@@ -15,17 +15,29 @@ func main() {
 		"E": {"A"},
 	}
 
-	bfs(graphMap, "A")
+	resultQueue := bfs(graphMap, "A")
 
+	fmt.Print(resultQueue)
 }
 
-func bfs(graph map[string][]string, startV string) {
+func bfs(graph map[string][]string, startV string) []string {
 
+	//이미 방문 한 노드 정보 저장
 	visited := queue.Queue{}
 	visited.Enqueue(startV)
-	visited.Enqueue("B")
+	var targetSlice []string
 
-	for _, qu := range visited {
-		fmt.Println(qu)
+	targetSlice = append(targetSlice, startV)
+
+	
+	//do someting. Enqueue
+	var resultList []string;
+	
+	for _, elem := range graph[targetSlice[0]]{
+		fmt.Println(elem)
 	}
+
+
+
+	return resultList
 }

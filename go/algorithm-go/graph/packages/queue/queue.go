@@ -31,8 +31,9 @@ func (q *Queue) IsExist(target interface{}) bool {
 
 	if q != nil {
 		for _, elem := range *q {
-			fmt.Printf("%s, %s is equals?", target, elem)
-			fmt.Println(reflect.DeepEqual(target, elem))
+			if(reflect.DeepEqual(target, elem)){
+				result = true;
+			}
 		}
 	}
 

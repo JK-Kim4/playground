@@ -16,11 +16,18 @@ public class Main {
         target.put("D", new String[]{"A", "B"});
         target.put("E", new String[]{"A"});
 
-        Graph g = new Graph(target);
+        graph.GraphMap g = new graph.GraphMap(target);
 
-        List<String > result = g.bnf("A");
+        List<String > resultBfs = g.bnf("A");
+        List<String > resultDfs = g.dfs("A", new ArrayList<>());
 
-        for (String s : result) {
+
+        for (String s : resultBfs) {
+            System.out.println(s);
+        }
+
+        System.out.println("======================");
+        for (String s : resultDfs) {
             System.out.println(s);
         }
     }

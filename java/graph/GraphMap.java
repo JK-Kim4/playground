@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Graph {
+public class GraphMap {
 
-    public Graph(){}
+    public GraphMap(){}
 
-    public Graph(Map<String, String[]> target){
+    public GraphMap(Map<String, String[]> target){
         this.target = target;
     }
 
@@ -30,6 +30,19 @@ public class Graph {
                 }
             }
         }
+        return visited;
+    }
+
+    public List<String> dfs(String startValue, List<String> pastVisited) {
+        List<String> visited = pastVisited;
+
+        visited.add(startValue);
+        for(String s : target.get(startValue)){
+            if(!visited.contains(s)){
+                visited = this.dfs(s, visited);
+            }
+        }
+
         return visited;
     }
 

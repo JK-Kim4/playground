@@ -18,7 +18,6 @@ public class GraphMap {
     public List<String > bnf(String startValue){
         List<String> visited = new ArrayList<String>();
         visited.add(startValue);
-
         List<String> queue = new ArrayList<>();
         queue.add(startValue);
         while(!queue.isEmpty()){
@@ -48,3 +47,6 @@ public class GraphMap {
 
 
 }
+
+
+

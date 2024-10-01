@@ -15,7 +15,7 @@ public class GraphMap {
 
     private Map<String, String[]> target = new HashMap<>();
 
-    public List<String > bnf(String startValue){
+    public List<String > bfs(String startValue){
         List<String> visited = new ArrayList<String>();
         visited.add(startValue);
         List<String> queue = new ArrayList<>();

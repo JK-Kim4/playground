@@ -18,7 +18,7 @@ public class Main {
 
         graph.GraphMap g = new graph.GraphMap(target);
 
-        List<String > resultBfs = g.bnf("A");
+        List<String > resultBfs = g.bfs("A");
         List<String > resultDfs = g.dfs("A", new ArrayList<>());
 
 

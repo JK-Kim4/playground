@@ -9,7 +9,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Map<String, String[]> target = new HashMap<>();
+        int[][] roomsAndKeys = new int[][]{
+                {1,3},{2,4},{0},{4},{},{3,4}
+        };
+
+        KeysOfRooms kr = new KeysOfRooms(roomsAndKeys);
+        kr.visitAvailableRooms(0);
+        kr.printVisitResult();
+
+
+       /* Map<String, String[]> target = new HashMap<>();
         target.put("A", new String[]{"B", "D", "E"});
         target.put("B", new String[]{"A", "C", "D"});
         target.put("C", new String[]{"B"});
@@ -29,6 +38,6 @@ public class Main {
         System.out.println("======================");
         for (String s : resultDfs) {
             System.out.println(s);
-        }
+        }*/
     }
 }

@@ -10,9 +10,12 @@
 public class MinCostClimbing {
 
     private int[] cost;
+    private int[] costMemory;
+
 
     public MinCostClimbing(int[] cost) {
         this.cost = cost;
+        this.costMemory = new int[cost.length];
     }
 
     public int minCostClimbingUsingDfs(int n) {
@@ -20,7 +23,11 @@ public class MinCostClimbing {
             return 0;
         }
 
-        return Math.min((minCostClimbingUsingDfs(n-1) + this.cost[n-1]) , (minCostClimbingUsingDfs(n-2) + this.cost[n-2]) );
+        if (costMemory[n] != 0) {
+            costMemory[n] = Math.min((minCostClimbingUsingDfs(n-1) + this.cost[n-1]) , (minCostClimbingUsingDfs(n-2) + this.cost[n-2]) );
+        }
+
+        return costMemory[n];
 
     }
 

@@ -20,7 +20,7 @@ public class MinCostClimbing {
             return 0;
         }
 
-        return Math.min((minCostClimbing(n-1) + this.cost[n-1]) , (minCostClimbing(n-2) + this.cost[n-2]) );
+        return Math.min((minCostClimbingUsingDfs(n-1) + this.cost[n-1]) , (minCostClimbingUsingDfs(n-2) + this.cost[n-2]) );
 
     }
 

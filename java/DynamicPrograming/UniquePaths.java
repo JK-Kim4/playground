@@ -13,13 +13,30 @@ public class UniquePaths {
 
     private int m = 0; // 행
     private int n = 0; // 열
+    private int[][] pathsMemory;
 
     public UniquePaths(int row, int column) {
         this.m = row;
         this.n = column;
+        this.pathsMemory = new int[row][column];
+    }
+    public void init(){
+
+        for(int i = 0; i < n; i++){
+            this.pathsMemory[0][i] = 1;
+        }
+
+        for(int i = 0; i < m; i++){
+            this.pathsMemory[i][0] = 1;
+        }
+
     }
 
-    public int getUniquePathsCount(){
+    public int solve(){
+        return 0;
+    }
 
+    public int[][] getPaths(){
+        return this.pathsMemory;
     }
 }

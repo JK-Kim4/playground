@@ -20,20 +20,15 @@ public class UniquePaths {
         this.n = column;
         this.pathsMemory = new int[row][column];
     }
-    public void init(){
 
-        for(int i = 0; i < n; i++){
-            this.pathsMemory[0][i] = 1;
+    public int solve(int row, int column){
+        if(row == 0 || column == 0){
+            return 1;
         }
 
-        for(int i = 0; i < m; i++){
-            this.pathsMemory[i][0] = 1;
-        }
+        this.pathsMemory[row][column] = solve(row - 1, column) + solve(row , column - 1);
 
-    }
-
-    public int solve(){
-        return 0;
+        return pathsMemory[row][column];
     }
 
     public int[][] getPaths(){

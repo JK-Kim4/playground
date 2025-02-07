@@ -20,4 +20,8 @@ public class MemberRegisterService {
 		memberDao.insert(newMember);
 		return newMember.getId();
 	}
+
+	public MemberDao getMemberDao() {
+		return this.memberDao;
+	}
 }

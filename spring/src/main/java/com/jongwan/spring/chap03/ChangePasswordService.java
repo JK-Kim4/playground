@@ -18,4 +18,7 @@ public class ChangePasswordService {
 		this.memberDao = memberDao;
 	}
 
+	public MemberDao getMemberDao() {
+		return this.memberDao;
+	}
 }

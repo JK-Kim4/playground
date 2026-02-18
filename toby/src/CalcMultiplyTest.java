@@ -1,14 +1,15 @@
 import java.io.IOException;
 
-public class CalcSumTest {
+public class CalcMultiplyTest {
 
     public static void main(String[] args) throws IOException {
 
         Calculator calculator = new Calculator();
 
-        int result = calculator.calcSum(CalcSumTest.class.getResource("numbers.txt").getPath());
+        int result = calculator.calcMultiple(
+            CalcMultiplyTest.class.getResource("numbers.txt").getPath());
 
-        if (result == 10) {
+        if (result == 24) {
             System.out.println("pass");
         } else {
             System.out.println("fail");

@@ -1,17 +1,18 @@
-import java.io.BufferedReader;import java.io.FileNotFoundException;import java.io.FileReader;import java.io.IOException;public class Calculator {
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-    public Integer calcSum(String filePath) throws IOException {
+public class Calculator {
+
+    public Integer fileReadTemplate(String filePath, BufferedReaderCallback callback)
+        throws IOException {
+
         BufferedReader br = null;
 
         try {
             br = new BufferedReader(new FileReader(filePath));
-            String line;
-            Integer sum = 0;
-            while ((line = br.readLine()) != null) {
-                sum += Integer.valueOf(line);
-            }
-
-            return sum;
+            int res = callback.doSomethingWithReader(br);
+            return res;
         } catch (IOException e) {
             System.out.println(e.getMessage());
             throw e;
@@ -24,5 +25,33 @@ import java.io.BufferedReader;import java.io.FileNotFoundException;import java.i
                 }
             }
         }
+    }
+
+    public Integer calcSum(String filePath) throws IOException {
+        BufferedReaderCallback sumCallBack =
+            br -> {
+                int sum = 0;
+                String line = null;
+                while ((line = br.readLine()) != null) {
+                    sum += Integer.parseInt(line);
+                }
+                return sum;
+            };
+
+        return fileReadTemplate(filePath, sumCallBack);
+    }
+
+    public Integer calcMultiple(String filePath) throws IOException {
+        BufferedReaderCallback sumCallBack =
+            br -> {
+                int multiply = 1;
+                String line = null;
+                while ((line = br.readLine()) != null) {
+                    multiply *= Integer.parseInt(line);
+                }
+                return multiply;
+            };
+
+        return fileReadTemplate(filePath, sumCallBack);
     }
 }

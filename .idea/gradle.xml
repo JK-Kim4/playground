@@ -7,6 +7,14 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/alborithum" />
         <option name="gradleHome" value="" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/toby" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/toby" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
